@@ -1,17 +1,12 @@
 name = "afftrack"
-main = "src/index.ts"
 compatibility_date = "2024-07-01"
-
-[env.production]
-name = "afftrack-prod"
-routes = [
-  { pattern = "afftrack.pages.dev/*", zone_name = "pages.dev" }
-]
 
 [build]
 command = "npm install --legacy-peer-deps && npm run build"
 cwd = "./"
-watch_paths = ["src/**"]
 
-[build.upload]
-format = "service-worker"
+[env.production]
+name = "afftrack-prod"
+
+[build.output]
+directory = "dist"
